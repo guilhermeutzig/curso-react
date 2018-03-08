@@ -1,8 +1,12 @@
 const BillingCycle = require('./billingCycle')
+const errorHandler = require('../common/errorHandler')
 
 BillingCycle.methods(['get', 'post', 'put', 'delete'])
-BillingCycle.updateOptions({ new: true, runValidators: true })
 // New serve para trazer os novos dados em um update, o runValidators é para validar os itens do comando put
+BillingCycle.updateOptions({ new: true, runValidators: true })
+
+// Aplica o JSON separado apenas com os erros retornados do serviço
+BillingCycle.after('post', errorHandler).after('put', errorHandler)
 
 BillingCycle.route('count', (req, res, next) => {
     BillingCycle.count((error, value) => {
