@@ -1,0 +1,93 @@
+[data-component='menu']
+    float right
+
+    ul
+        padding 0
+        margin 0
+        @media screen and (max-width 992px)
+            position fixed
+            height 100%
+            width 80%
+            left -100%
+            top 0
+            transition 500ms ease-in-out
+            z-index 1000
+            background-color rgba( 0, 0, 0, .5 )
+            &.open
+                left 0
+
+    li
+        list-style none
+        display inline-block
+        margin-right 25px
+        &.active,
+        &:hover
+            a
+                border-color #23b7a4
+        &:last-child
+            margin-right 0
+    
+    a
+        display block
+        border 2px solid transparent
+        padding 5px
+        border-radius 5px
+        transition 300ms ease-in-out
+        font-family 'Open Sans'
+        font-size 14px
+        font-weight 500
+        color #23b7a4
+        text-transform uppercase
+        &:hover
+            color #23b7a4
+            text-decoration none
+    
+    #nav-icon3
+        display none
+        width 60px
+        height 45px
+        position relative
+        margin 50px auto
+        transform rotate(0deg)
+        transition .5s ease-in-out
+        z-index 1050
+        cursor pointer
+        @media screen and (max-width: 992px)
+            display block
+
+    #nav-icon3 span
+        display block
+        position absolute
+        height 9px
+        width 100%
+        background #d3531a
+        border-radius 9px
+        opacity 1
+        left 0
+        transform rotate(0deg)
+        transition .25s ease-in-out
+    
+    #nav-icon3 span:nth-child(1)
+        top 0px    
+
+    #nav-icon3 span:nth-child(2),#nav-icon3 span:nth-child(3)
+        top 18px    
+
+    #nav-icon3 span:nth-child(4)
+        top 36px    
+
+    #nav-icon3.open span:nth-child(1)
+        top 18px
+        width 0%
+        left 50%    
+
+    #nav-icon3.open span:nth-child(2)
+        transform rotate(45deg)    
+
+    #nav-icon3.open span:nth-child(3)
+        transform rotate(-45deg)    
+
+    #nav-icon3.open span:nth-child(4)
+        top 18px
+        width 0%
+        left 50%    
