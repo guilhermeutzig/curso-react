@@ -2,12 +2,13 @@ import React, { Component } from 'react'
 
 import Stylus from './index.styl'
 
-import Header from './../commons/header/header'
-import Banner from './../components/banner/banner'
-import Title from './../commons/title/title'
-import Text from './../commons/text/text'
-import NumericItems from './../commons/numericItems/numericItems';
-import Section from './../commons/section/section'
+import Header from './../../commons/header/header'
+import Banner from './../../commons/banner/banner'
+import Title from './../../commons/title/title'
+import Text from './../../commons/text/text'
+import NumericItems from './../../commons/numericItems/numericItems';
+import Section from './../../commons/section/section'
+import Counter from './../../commons/counter/counter'
 
 class Index extends Component {
 
@@ -49,11 +50,14 @@ class Index extends Component {
                         </div>
                     </div>
                 </Section>
+                <Section>
+                    <Counter />
+                </Section>
             </div>
         )
 
     }
 
-}    
+}
 
 export default Index
